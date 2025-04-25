@@ -1,0 +1,97 @@
+.body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    width: 100%;
+    height: 9%;
+    background-color: rgb(187, 181, 181);
+    z-index: 100;
+}
+
+.subtitle {
+    font-size: 200%;
+    font-weight: bold;
+}
+
+.sidebar {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: 1fr;
+    left: 0;
+    height: 91%;
+    top: 9%;
+    width: 25%;
+    background-color: rgb(184, 121, 228);
+    border: 2px solid black;
+    padding-top: 1.5%;
+}
+
+.sideSubtitle {
+    text-align: center;
+    font-size: 200%;
+    font-weight: bold;
+    margin-bottom: 2.5%;
+    border-bottom: 2px solid black;
+    padding-bottom: 4.5%;
+    padding-top: 1.5%;
+}
+
+.gameLink {
+    text-align: center;
+    border-bottom: 2px solid black;
+    margin-bottom: 2.5%;
+    padding-top: 10.25%;
+    font-size: 150%;
+    padding-bottom: 10.25%;
+    text-decoration: none;
+}
+
+.mainArea {
+    position: absolute;
+    left: 25%;
+    top: 9%;
+    width: 75%;
+    padding-right: 1%;
+    padding-top: 1.5%;
+    z-index: -100;
+    background-color: rgb(100, 100, 201);
+    height: 91%;
+    border: 2px solid black;
+}
+
+.descriptionsTitle {
+    text-align: center;
+    font-size: 200%;
+    font-weight: bold;
+    margin-bottom: 2.5%;
+    border-bottom: 2px solid black;
+    padding-bottom: 2%;
+}
+
+.descContainer {
+    display:grid;
+    grid-template-columns: 1fr;
+}
+
+.descTitle {
+    font-weight: bold;
+    font-size: 150%;
+    text-align: center;
+    margin-bottom: 1%;
+    padding-bottom: 1%;
+}
+
+.antvhilleDesc, .chessDesc {
+    border-bottom: 2px solid black;
+    padding-bottom: 1.5%;
+    text-align: center; 
+    margin-bottom: 2.5%;
+}
