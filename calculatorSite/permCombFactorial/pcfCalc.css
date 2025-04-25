@@ -1,0 +1,65 @@
+.body {
+    padding: 5% 25% 5% 25%;
+    background-color: rgba(147, 97, 4, 0.634);
+}
+
+.description {
+    font-size: 150%;
+    padding-bottom: 3%;
+}
+
+.dropdown {
+    width: 100%;
+    margin-bottom: 2.5%;
+    height: 75%;
+    background-color: rgba(190, 99, 38, 0.636);
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.input {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    width: 100%;
+    margin-bottom: 2.5%;
+    background-color: rgb(219, 219, 197);
+}
+
+.inputGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.outBox {
+    text-align: center;
+    padding-bottom: 15%;
+    padding-top: 5%;  
+}
+
+.bottomContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+}
+
+.calcButton {
+    cursor: pointer;
+    opacity: 1;
+    background-color: rgba(190, 99, 38, 0.636);
+    transition: 0.15s;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    height: 150%;
+}
+
+.calcButton:hover {
+    opacity: 0.6;
+}
+
+.calcButton:active {
+    transform: translateY(4px);
+}

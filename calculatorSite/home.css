@@ -1,0 +1,136 @@
+.body {
+    margin: 0;
+    background-color: rgb(197, 99, 115);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: 1fr; 
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 35%;
+    border-right-width: 10px;
+    border-right-color: maroon;
+    border-right-style: solid;
+    background-color: rgba(196, 83, 83, 0.734);
+    text-align: center;
+}
+
+.calcLink {
+    font-size: 175%;
+    text-decoration: none;
+}
+
+.calcDiv {
+    width: 100%;
+    padding-bottom: 2%;
+    padding-top: 2%;
+    border-bottom-style: solid;
+    border-bottom-color: black;
+    border-bottom-width: 2px;
+}
+
+.right {
+    position: absolute;
+    left: 35%;
+    background-color: rgb(197, 99, 115);
+    height: 70%;
+    padding-top: 15%;
+    padding-left: 10%;
+    padding-right: 10%;
+    z-index: -1;
+}
+
+.description {
+    font-size: 150%;
+    text-align: left;
+    line-height: 133%;
+}
+
+.title {
+    font-size: 250%;
+    font-style: bold;
+    text-align: center;
+    margin-bottom: 1.5%;
+    height: 10%;
+}
+
+.CICPic {
+    position: absolute;
+    width: 25%;
+    top: 15%;
+    left: 12.5%;
+    transform: rotate(-20deg);
+}
+
+.quadPic {
+    position: absolute;
+    width: 25%;
+    top: 12.5%;
+    background-color: white;
+    left: 42.5%;
+}
+
+.pcfPic {
+    position: absolute;
+    width: 27.5%;
+    top: 24%;
+    left: 70%;
+    background-color: white;
+    transform: rotate(35deg);
+}
+
+.binomCDFPic {
+    position: absolute;
+    width: 25%;
+    top: 65%;
+    left: 12.5%;
+    background-color: white;
+    transform: rotate(20deg);
+}
+
+@media screen and (max-width: 600px) {
+    .CICPic, .quadPic, .pcfPic {
+        display: none;
+    }
+
+    .title {
+        font-size: 150%;
+    }
+
+    .description {
+        font-size: 85%;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .CICPic {
+        width: 20%;
+        top: 10%;
+    }
+    .quadPic {
+        top: 7.5%;
+    }
+    .pcfPic {
+        width: 22.5%;
+        top: 20%;
+        left: 77.5%;
+    }
+    .binomCDFPic {
+        width: 20%;
+        top: 45%;
+        left: 10%;
+    }
+    .title {
+        font-size: 165%;
+    }
+
+    .description {
+        font-size: 90%;
+    }
+}

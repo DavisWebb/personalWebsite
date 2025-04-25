@@ -1,0 +1,586 @@
+.body {
+    font-family: Arial;
+    background-image: url(images/8041292-texture-of-natural-green-grass-and-ground.jpg);
+    margin: 0;
+    width: 100%;
+}
+
+.header {
+    background-color: rgba(43, 128, 0, 0.75);
+    display: flex;
+    position: fixed;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 100%;
+    border-bottom: 2px solid black;
+}
+
+.date {
+    font-size: 150%;
+    position: absolute;
+    left: 2%;
+}
+
+.subtitle {
+    font-size: 150%;
+}
+
+.bookOpen {
+    position: absolute;
+    right: 1%;
+    width: 10%;
+    height: 60%;
+    background-color: rgba(210, 180, 140, 0.75);
+    border: 1px solid black;
+    cursor: pointer;
+    transition: .15s;
+}
+
+.bookOpen:hover {
+    opacity: .95;
+}
+
+.bookOpen:active {
+    transform:translateY(4px);
+}
+
+.sidebar {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 40px;
+    height: 100%;
+    width: 25%;
+    align-items: center;
+    background-color: rgba(43, 128, 0, 0.75);
+}
+
+.debt-label {
+    font-size: 150%;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    background-color: rgba(255, 255, 255, 0.75);
+    cursor:pointer;
+    border: 1px solid black;
+    opacity: 1;
+    transition: .15s;
+}
+
+.debt-label:hover {
+    opacity: .85;
+}
+
+.debt-label:active {
+    transform: translateY(4px);
+}
+
+.national-debt-bar {
+    display: flex;
+    border: 2px solid black;
+    width: 95%;
+    margin-bottom: 5%;
+}
+
+.ndb-left {
+    padding-left: 2%;
+    width: 50%;
+    background-image: linear-gradient(to right, gold, rgba(255, 217, 0, 0.75));
+}
+
+.ndb-right {
+    width: 50%;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+.approval-label {
+    font-size: 150%;
+    margin-bottom: 2%;
+}
+
+.national-approval-bar {
+    display: flex;
+    border: 2px solid black;
+    width: 95%;
+    margin-bottom: 5%;
+}
+
+.nab-left {
+    padding-left: 2%;
+    width: 50%;
+    background-image: linear-gradient(to right, rgb(56, 198, 56), rgba(56, 198, 56, 0.750));
+}
+
+.nab-right {
+    width: 50%;
+    background-color: rgba(0, 0, 0, 0.25)
+}
+
+.bookContainer {
+    display: block;
+    position: absolute;
+    top: 15%;
+    left: 20%;
+    right: 20%;
+    width: 60%;
+    z-index: 100;
+}
+
+.book {
+    width: 100%;
+}
+
+.bookText1 {
+    position: absolute;
+    top: 12%;
+    left: 5%;
+    width: 43%;
+    height: 74%;
+    font-size: 100%;   
+    line-height: 200%;
+}
+
+@media screen and (max-width: 1550px) {
+    .bookText1 {
+        font-size: 85%;
+        line-height: 170%;
+    }
+}
+
+@media screen and (max-width: 1350px) {
+    .bookText1 {
+        font-size: 80%;
+        line-height: 165%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .bookText1 {
+        font-size: 75%;
+        line-height: 165%;
+    }
+}
+
+@media screen and (max-width: 1125px) {
+    .bookText1 {
+        font-size: 70%;
+        line-height: 150%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .bookText1 {
+        font-size: 65%;
+        line-height: 145%;
+    }
+}
+
+@media screen and (max-width: 875px) {
+    .bookText1 {
+        font-size: 60%;
+        line-height: 140%;
+    }
+}
+
+@media screen and (max-width: 825px) {
+    .bookText1 {
+        font-size: 55%;
+        line-height: 135%;
+    }
+}
+
+@media screen and (max-width: 775px) {
+    .bookText1 {
+        font-size: 52.5%;
+        line-height: 130%;
+    }
+}
+
+.bookText2 {
+    position: absolute;
+    width: 43%;
+    top: 12%;
+    left: 53%;
+    height: 74%;
+
+}
+
+.bookText2 {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.choice-description {
+    text-align: center;
+}
+
+.book-option {
+    margin-bottom: 5%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid black;
+    width: 95%;
+    cursor: pointer;
+    opacity: 1;
+    transition: 0.15s;
+}
+
+.book-option:hover {
+    opacity: .7;
+}
+
+.book-option:active {
+    transform:translateY(4px);
+}
+
+.xButton {
+    position: absolute;
+    padding: 0;
+    top: 6%;
+    right: 5%;
+    height: 7%;
+    width: 5%;
+    background-color: transparent;
+    border: none;
+    cursor:pointer;
+}
+
+.xButton:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.ant-hill-1 {
+    position: absolute;
+    left: 58%;
+    top: 12%;
+    width: 10%;
+    background-color: rgba(255, 255, 255);
+    padding-bottom: 0.5%;
+    border: 2px solid black;
+}
+
+.ant-hill-2 {
+    position: absolute;
+    left: 35%;
+    top: 22%;
+    width: 10%;
+    background-color: rgba(255, 255, 255);
+    padding-bottom: 0.5%;
+    border: 2px solid black;
+}
+
+.ant-hill-3 {
+    position: absolute;
+    left: 45%;
+    bottom: 12%;
+    width: 10%;
+    background-color: rgba(255, 255, 255);
+    padding-bottom: 0.5%;
+    border: 2px solid black;
+}
+
+.ant-hill-4 {
+    position: absolute;
+    left: 71%;
+    bottom: 12%;
+    width: 10%;
+    background-color: rgba(255, 255, 255);
+    padding-bottom: 0.5%;
+    border: 2px solid black;
+}
+
+.ant-hill-5 {
+    position: absolute;
+    left: 80%;
+    top: 22%;
+    width: 10%;
+    background-color: rgba(255, 255, 255);
+    padding-bottom: 0.5%;
+    border: 2px solid black;
+}
+
+.anthill-img-1 {
+    width: 100%;
+}
+
+.anthill-img-2 {
+    width: 100%;
+}
+
+.anthill-img-3 {
+    width: 100%;
+}
+
+.anthill-img-4 {
+    width: 100%;
+}
+
+.anthill-img-5 {
+    width: 100%;
+}
+
+.ah-label {
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: 150%;
+}
+
+.approval-bar {
+    display: flex;
+    border-bottom: 2px solid black;
+}
+
+.ab-left {
+    width: 50%;
+    background-image: linear-gradient(to right, rgb(56, 198, 56), rgba(56, 198, 56, 0.750));
+    overflow: hidden;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.ab-right {
+    width: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.resource-bar {
+    display: flex;
+    border-bottom: 2px solid black;
+}
+
+.rb-left-1 {
+    width: 80%;
+    background-image: linear-gradient(to right, rgb(187, 139, 51), rgb(187, 139, 51, 0.5));
+}
+
+.rb-right-1 {
+    width: 20%;
+    background-color: rgba(0, 0, 0, 0.5)
+}
+
+.rb-left-2 {
+    width: 65%;
+    background-image: linear-gradient(to right, rgb(187, 139, 51), rgb(187, 139, 51, 0.5));
+}
+
+.rb-right-2 {
+    width: 35%;
+    background-color: rgba(0, 0, 0, 0.5)
+}
+
+
+.rb-left-3 {
+    width: 50%;
+    background-image: linear-gradient(to right, rgb(187, 139, 51), rgb(187, 139, 51, 0.5));
+}
+
+.rb-right-3 {
+    width: 50%;
+    background-color: rgba(0, 0, 0, 0.5)
+}
+
+.rb-left-4 {
+    width: 35%;
+    background-image: linear-gradient(to right, rgb(187, 139, 51), rgb(187, 139, 51, 0.5));
+}
+
+.rb-right-4 {
+    width: 65%;
+    background-color: rgba(0, 0, 0, 0.5)
+}
+
+.rb-left-5 {
+    width: 20%;
+    background-image: linear-gradient(to right, rgb(187, 139, 51), rgb(187, 139, 51, 0.5));
+}
+
+.rb-right-5 {
+    width: 80%;
+    background-color: rgba(0, 0, 0, 0.5)
+}
+
+
+
+.footer {
+    position: absolute;
+    display: flex;
+    justify-content: right;
+    bottom: 0;
+    right: 0;
+    width: 10%;
+    height: 6%;
+}
+
+.nextButton {
+    margin-bottom: 5px;
+    margin-right: 5px;
+    width: 100%;
+    background-color: white;
+    cursor: pointer;
+    opacity: 1;
+    transition: .15s;
+}
+
+.nextButton:hover {
+    opacity: .95;
+}
+
+.nextButton:active {
+    transform:translateY(4px);
+}
+
+.nbImage {
+    height: 100%;
+    background-color: transparent;
+}
+
+.debtManager {
+    position: absolute;
+    display:none;
+    flex-direction: column;
+    align-items: center;
+    left: 15%;
+    right: 15%;
+    top: 15%;
+    bottom: 15%;
+    height: 70%;
+    width: 70%;
+    background-color: rgb(143, 224, 197);
+    border: 25px solid rgb(53, 82, 73); 
+    z-index: 100;
+}
+
+.closeDebtManager {
+    position: absolute;
+    right: 2%;
+    top: 2%;
+    width: 7.5%;
+    height: 5%;
+    background-color: rgba(53, 82, 73, 0.5);
+    border: 1px solid black;
+    border-radius: 2px;
+    opacity: 1;
+    transition: .15s;
+}
+
+.closeDebtManager:hover {
+    opacity: .85;
+}
+
+.closeDebtManager:active {
+    transform:translateY(4px);
+}
+
+.debtManagerTitle {
+    margin-top: 2%;
+    font-size: 200%;
+    margin-bottom: 3%;
+    font-weight: bold;
+}
+
+.debtDropdown {
+    margin-bottom: 2.5%;
+    height: 10%;
+    border: 1px solid black;
+    border-radius: 2px;
+}
+
+.currentStatus, .totalStatus {
+    display: none;
+    margin-bottom: 3%;
+    font-size: 150%;
+}
+
+.debtAdjustDisclaimer {
+    display: none;
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-bottom: 5%;
+    line-height: 150%;
+    font-size: 125%;
+    text-align: center;
+}
+
+.rdtbContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.raiseDebtTaxButton, .reduceDebtTaxButton {
+    height: 25%;
+    width: 95%;
+    background-color: white;
+}
+
+.raiseDebtTaxButton {
+    margin-right: 5px;
+}
+
+.raiseDebtTaxButton:hover, .reduceDebtTaxButton:hover {
+    opacity: .85;
+}   
+
+.raiseDebtTaxButton:active, .reduceDebtTaxButton:active {
+    transform: translateY(4px);
+}
+
+.rdtbImage, .rdtbImage2 {
+    height: 100%;
+}
+
+.debtPopup {
+    display: none;
+    position: absolute;
+    grid-template-columns: 1fr;
+    text-align: center;
+    left: 55%;
+    width: 40%;
+    background-color: rgba(173, 173, 173);
+    height: 77.5%;
+    top: 12.5%;
+    bottom: 12.5%;
+    border: 5px solid black;
+    padding-bottom: 2%;
+}
+
+.dpDesc {
+    padding-top: 5%;
+    font-size: 150%;
+}
+
+.dpPercent {
+    width: 85%;
+    margin-left: 7.5%;   
+    margin-bottom: 1.5%;
+    cursor: pointer;
+    opacity: 1;
+    border: 1px solid black;
+    background-color: rgba(167, 220, 98);
+    transition: .15s;
+}
+
+.customDP {
+    margin-top: 1.5%;
+}
+
+.dpInput {
+    color: black;
+    text-align: center;
+    font-size: 65%;
+    width: 84%;
+    margin-left: 7.5%;
+    margin-bottom: 1.5%;
+    margin-top: 1%;
+    cursor: pointer;
+    opacity: 1;
+    border: 1px solid black;
+    background-color: rgb(213, 235, 134);
+}
+
+.dpPercent:hover {
+    opacity: .85;
+}
+
+.dpPercent:active {
+    transform: translateY(4px);
+}

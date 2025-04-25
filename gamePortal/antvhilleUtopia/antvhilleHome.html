@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="antvhilleHome.css">
+        <title>Antvhille Utopia</title>
+    </head>
+    <body class="body" id="body">
+        <div class="header">
+            <button class="bookOpen" id="bookOpen" onclick="openBook()">Open Book</button>
+            <div class="date" id="date">Date: 00/01/2000</div>
+            <div class="subtitle">Welcome to Antvhille!</div>
+        </div>
+        <div class="sidebar">
+            <button class="debt-label" onclick="openDebtManager()">NATIONAL DEBT</button>
+            <div class="national-debt-bar">
+                <div class="ndb-left" id="debt-left">910000</div>
+                <div class="ndb-right" id="debt-right"></div>
+            </div>
+            <div class="approval-label">NATIONAL APPROVAL</div>
+            <div class="national-approval-bar" id="left-ab">
+                <div class="nab-left" id="nab-left">50%</div>
+                <div class="nab-right" id="nab-right"></div>
+            </div>
+        </div>
+        <div class="footer">
+            <button class="nextButton" id="nextButton" onclick="passMonth()">
+                <image class="nbImage" src="images/rightArrow.jpg"></image>
+            </button>
+        </div>
+        <div class="bookContainer" id="bookContainer">
+            <image class="book" src="images/Book_Background_29.webp">
+                <div class="bookText1">
+                    Welcome to Antvhille! You have won the presidential election, Congrats! 
+                    You will be presented with issues throughout your term and will make decisions on how to solve them! 
+                    These decisions' impact and reprecussions will be visible through several bars on screen including 
+                    national approval, debt, and the resource meter of each district. District 1 is the 20% wealthiest ants, 
+                    District 2 is 21 - 40%, so on and so forth. The national approval bar on the left represents the average of 
+                    all 5 districts. Right now all of them are at 50%, but once you start, they will vary slightly over time and of 
+                    course, change drastically based on choices the residents like/dislike. The button in the bottom right will
+                    skip to the next month and you should click it once you've enacted all the policy you need to for the month. 
+                    Good luck!
+                </div>
+                <div class="bookText2">
+                    <div class="choice-description">Choose One!</div>
+                    <button class="book-option" id="book-option-1">Host a Party!</button>
+                    <button class="book-option" id="book-option-2">Hold a press conference to talk about your plans for the future</button>
+                    <button class="book-option" id="book-option-3">Go thank people for their support in public</button>
+                    <button class="book-option" id="book-option-4">Do Nothing</button>
+                </div>
+                <button class="xButton" onclick="closeBook()"></button>
+            </image>
+        </div>
+        <div class="debtManager" id="debtManager">
+            <button class="closeDebtManager" onclick="closeDebtManager()">Close</button>
+            <div class="debtManagerTitle">Debt Manager</div>
+            <select class="debtDropdown" id="debtDropdown" onchange="showDebtInfo()">
+                <option value="" disabled selected hidden>What Department Would You Like To Adjust?</option>
+                <option value="0">Taxes</option>
+                <option value="1">Social Services</option>
+                <option value="2">Defense</option>
+                <option value="3">Education</option>
+                <option value="4">Healthcare</option>
+            </select>
+            <div class="currentStatus" id="currentStatus">Current Spending/Income per month: $X</div>
+            <div class="totalStatus" id="totalStatus">Total Spending per month: $X</div>
+            <div class="debtAdjustDisclaimer" id="debtAdjustDisclaimer">Note: By taking one of these actions, the game will automatically fast forward one month. So if you have not selected a book action yet, it will be marked as "do nothing."</div>
+            <div class="rdtbContainer">
+                <button class="raiseDebtTaxButton">
+                    <image class="rdtbImage" src="images/upArrow.jpg" onclick="upDownClicked(0)"></image>
+                </button>
+                <button class="reduceDebtTaxButton">
+                    <image class="rdtbImage2" src="images/downArrow.jpg" onclick="upDownClicked(1)"></image>
+                </button>
+            </div>
+            <div class="debtPopup" id="debtPopup">
+                <div class="dpDesc" id="dpDesc">Raise/Reduce By How Much?</div>
+                <button class="dpPercent" id="dpPercent1" onclick="dpPercent(1)">10%</button>
+                <button class="dpPercent" id="dpPercent2" onclick="dpPercent(2)">20%</button>
+                <button class="dpPercent" id="dpPercent3" onclick="dpPercent(3)">30%</button>
+                <button class="dpPercent" id="dpPercent4" onclick="dpPercent(4)">40%</button>
+                <button class="dpPercent" id="dpPercent5" onclick="dpPercent(5)">50%</button>
+                <button class="dpPercent" id="dpPercent6" onclick="dpPercent(6)">60%</button>
+                <button class="dpPercent" id="dpPercent7" onclick="dpPercent(7)">70%</button>
+                <button class="dpPercent" id="dpPercent8" onclick="dpPercent(8)">80%</button>
+                <button class="dpPercent" id="dpPercent9" onclick="dpPercent(9)">90%</button>
+                <button class="dpPercent" id="dpPercent10" onclick="dpPercent(10)">100%</button>
+                <div class="customDP">Custom</div>
+                <input class="dpInput" id="dpInput" placeholder="Enter The Number You Want To Raise/Reduce By in $ (but do not put a $ symbol.)">
+                <button class="dpPercent" id="dpPercentInput" onclick="dpPercent(11)">Click here to adjust by inputted value!</button>
+            </div> 
+        </div>  
+        <div class="ant-hill-1" id="ant-hill-1">
+            <div class="approval-bar" id="approval-bar-1">
+                <div class="ab-left" id="ab1-left">50%</div>
+                <div class="ab-right" id="ab1-right"></div>
+            </div>
+            <div class="resource-bar" id="resource-bar-1">
+                <div class="rb-left-1" id="rb1-left">80%</div>
+                <div class="rb-right-1" id="rb1-right"></div>
+            </div>
+            <image class="anthill-img-1" id="anthill-img-1" src="images/anthill.avif"></image>
+            <div id="ah-label-1" class="ah-label">District 1</div>
+        </div>
+        <div class="ant-hill-2" id="ant-hill-2">
+            <div class="approval-bar" id="approval-bar-2">
+                <div class="ab-left" id="ab2-left">50%</div>
+                <div class="ab-right" id="ab2-right"></div>
+            </div>
+            <div class="resource-bar" id="resource-bar-2">
+                <div class="rb-left-2" id="rb2-left">65%</div>
+                <div class="rb-right-2" id="rb2-right"></div>
+            </div>
+            <image class="anthill-img-2" id="anthill-img-2" src="images/anthill.avif"></image>
+            <div id="ah-label-2" class="ah-label">District 2</div>
+        </div>
+        <div class="ant-hill-3" id="ant-hill-3">
+            <div class="approval-bar" id="approval-bar-3">
+                <div class="ab-left" id="ab3-left">50%</div>
+                <div class="ab-right" id="ab3-right"></div>
+            </div>
+            <div class="resource-bar" id="resource-bar-3">
+                <div class="rb-left-3" id="rb3-left">50%</div>
+                <div class="rb-right-3" id="rb3-right"></div>
+            </div>
+            <image class="anthill-img-3" id="anthill-img-3" src="images/anthill.avif"></image>
+            <div id="ah-label-3" class="ah-label">District 3</div>
+        </div>
+        <div class="ant-hill-4" id="ant-hill-4">
+            <div class="approval-bar" id="approval-bar-4">
+                <div class="ab-left" id="ab4-left">50%</div>
+                <div class="ab-right" id="ab4-right"></div>
+            </div>
+            <div class="resource-bar" id="resource-bar-4">
+                <div class="rb-left-4" id="rb4-left">35%</div>
+                <div class="rb-right-4" id="rb4-right"></div>
+            </div>
+            <image class="anthill-img-4" id="anthill-img-4" src="images/anthill.avif"></image>
+            <div id="ah-label-4" class="ah-label">District 4</div>
+        </div>
+        <div class="ant-hill-5" id="ant-hill-5">
+            <div class="approval-bar" id="approval-bar-5">
+                <div class="ab-left" id="ab5-left">50%</div>
+                <div class="ab-right" id="ab5-right"></div>
+            </div>
+            <div class="resource-bar" id="resource-bar-5">
+                <div class="rb-left-5" id="rb5-left">20%</div>
+                <div class="rb-right-5" id="rb5-right"></div>
+            </div>
+            <image class="anthill-img-5" id="anthill-img-5" src="images/anthill.avif"></image>
+            <div id="ah-label-5" class="ah-label">District 5</div>
+        </div>
+        <script src="antvhilleHome.js"></script>
+    </body>
+</html>

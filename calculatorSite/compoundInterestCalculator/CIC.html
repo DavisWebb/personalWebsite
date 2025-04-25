@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="CIC.css">
+        <title>Compound Interest Calculator</title>
+    </head>
+    <body class="body">
+        <div class="description">To use the compound interest calculator, Enter the principal, investment per compound, interest rate, and number of compounds (monthly interest for 3 years would be 36 compounds)</div>
+        <div class="inputGrid">
+            <input type="text" class="inputOne" id="principalInput" placeholder="Enter Principal Here">
+            <input type="text" class="inputTwo" id="investmentInput" placeholder="Enter Investment Per Compound Here">
+            <input type="text" class="inputThree" id="rateInput" placeholder="Enter Interest Rate Here (in %, but do not put '%' symbol.)">
+            <input type="text" class="inputFour" id="compoundInput" placeholder="Enter Number of Compounds Here">
+        </div>
+        <div class="bottomContainer" id="bottomContainer">
+            <div class="output" id="outBox">
+                Output Goes Here
+            </div>
+            <button class="calcButton" onclick="calculate()">
+                Calculate
+            </button>
+        </div>  
+        <script src="CIC.js"></script>
+    </body>
+</html>

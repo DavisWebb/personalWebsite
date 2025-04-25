@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="binomCDF.css">
+        <title>binomCDF Calculator</title>
+    </head>
+    <body class="body">
+        <div class="description">To find out probability of the number of successes (X) being less than or equal to a specified amount (c) enter the number of trials (n), probability of success in decimal form (P), and the target number of successes you would like to see the probability of X being less than or equal to (c)</div>
+        <div class="inputGrid">
+            <input id="nInput" class="input" placeholder="Enter number of trials (n)">
+            <input id="pInput" class="input" placeholder="Enter probability of success (decimal form) (P)">
+            <input id="cInput" class="input" placeholder="Enter target success # (c)">
+        </div>
+        <div class="bottomContainer">
+            <button class="calcButton" onclick="calculate()">Calculate</button>
+            <div class="outBox" id="outBox">Output Here</div>
+        </div>
+        <script src="binomCDF.js"></script>
+    </body>
+</html>

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Chess</title>
+        <link rel="stylesheet" href="chessSiteCSS/chessBoard.css">
+        <script> 
+        let status = 1;
+            function flipSide() {
+                const flipsImg = document.querySelectorAll("img");
+                const board = document.getElementById("board");
+                if (status % 2 == 1) {
+                flipsImg.forEach(element => {
+                    element.style.transform = 'rotate(180deg)';
+                    board.style.transform = 'rotate(180deg)';
+                });
+            }
+            else {
+                flipsImg.forEach(element => {
+                    element.style.transform = 'rotate(360deg)';
+                    board.style.transform = 'rotate(360deg)';
+                });
+            }
+            status += 1;
+        }
+            function startNewGame() {
+                location.reload();
+            }
+
+            function makeAllDraggable() {
+                const drags = document.querySelectorAll("button");
+                drags.forEach(element => {
+                    if (element.getAttribute("class") != "play-reset-button" && element.getAttribute("class") != "flip-button") {
+                        makeDraggable(element);
+                    }
+                });
+            }
+
+            function makeDraggable(elementId) {
+    const piece = elementId;
+    const gridContainer = document.getElementById("board");
+    const gridSize = 75; 
+
+    let offsetX, offsetY, isDragging = false;
+
+    piece.addEventListener("mousedown", function(event) {
+        isDragging = true;
+
+        offsetX = event.clientX - piece.getBoundingClientRect().left;
+        offsetY = event.clientY - piece.getBoundingClientRect().top;
+
+        piece.style.position = "absolute";
+        piece.style.zIndex = 1000;
+    });
+
+    document.addEventListener("mousemove", function(event) {
+        if (isDragging) {
+            let containerRect = gridContainer.getBoundingClientRect();
+            let moveX = event.clientX - containerRect.left - offsetX;
+            let moveY = event.clientY - containerRect.top - offsetY;
+
+            piece.style.left = moveX + "px";
+            piece.style.top = moveY + "px";
+        }
+    });
+
+    document.addEventListener("mouseup", function(event) {
+        if (isDragging) {
+            isDragging = false;
+
+            let containerRect = gridContainer.getBoundingClientRect();
+            let dropX = event.clientX - containerRect.left - offsetX;
+            let dropY = event.clientY - containerRect.top - offsetY;
+
+            let snappedX = Math.round(dropX / gridSize) * gridSize;
+            let snappedY = Math.round(dropY / gridSize) * gridSize;
+
+            piece.style.left = snappedX + "px";
+            piece.style.top = snappedY + "px";
+        }
+    });
+}
+        </script>
+    </head>
+    <body onload="makeAllDraggable()" style="
+    padding-top: 5%;
+    padding-right: 10%;
+    padding-bottom: 5%;
+    padding-left: 10%;
+    background-color: rgba(4, 39, 91, 0.856);
+    ">
+        <div class="sidebar">
+            <button onclick="startNewGame()" class="play-reset-button">Start New Game</button>
+            <button onclick="flipSide()" class="flip-button">
+                <img class="flipImage" src="images/switchSides.png">
+            </button>
+        </div>
+        <div id="board" class="chess-board-container">
+            <div class="board-space-black">
+                <button class="black-piece-button" id="black">
+                    <img class="black-rook" src="images/br.png">
+                </button>
+            </div>
+            <div class="board-space-white">
+                <button class="black-piece-button" id="black-2">
+                    <img class="black-knight" src="images/bn.png">
+                </button>
+            </div>
+            <div class="board-space-black">
+                <button class="black-piece-button" id="black-3">
+                    <img class="black-bishop" src="images/bb.png">
+                </button>
+            </div>
+            <div class="board-space-white">
+                <button class="black-piece-button" id="black-4">
+                    <img class="black-queen" src="images/bq.png">
+                </button>
+            </div>
+            <div class="board-space-black">
+                <button class="black-piece-button" id="black-5">
+                    <img class="black-king" src="images/bk.png">
+                </button>
+            </div>
+            <div class="board-space-white">
+                <button class="black-piece-button" id="black-6">
+                    <img class="black-bishop" src="images/bb.png">
+                </button>
+            </div>
+            <div class="board-space-black">
+                <button class="black-piece-button" id="black-7">
+                    <img class="black-knight" src="images/bn.png">
+                </button>
+            </div>
+            <div class="board-space-white">
+                <button class="black-piece-button" id="black-8">
+                    <img class="black-rook" src="images/br.png">
+                </button>
+            </div>
+
+
+            <div class="board-space-white">
+                <button class="black-piece-button" id="black-9">
+                    <img class="black-pawn" src="images/bp.png">
+                </button>
+            </div>
+            <div class="board-space-black">
+                <button class="black-piece-button" id="black-10">
+                    <img class="black-pawn" src="images/bp.png">
+                </button>
+            </div>
+            <div class="board-space-white">
+                <button class="black-piece-button" id="black-11">
+                    <img class="black-pawn" src="images/bp.png">
+                </button>
+            </div>
+            <div class="board-space-black">
+                <button class="black-piece-button" id="black-12">
+                    <img class="black-pawn" src="images/bp.png">
+                </button>
+            </div>
+            <div class="board-space-white">
+                <button class="black-piece-button" id="black-13">
+                    <img class="black-pawn" src="images/bp.png">
+                </button>
+            </div>
+            <div class="board-space-black">
+                <button class="black-piece-button" id="black-14">
+                    <img class="black-pawn" src="images/bp.png">
+                </button>
+            </div>
+            <div class="board-space-white">
+                <button class="black-piece-button" id="black-15">
+                    <img class="black-pawn" src="images/bp.png">
+                </button>
+            </div>
+            <div class="board-space-black">
+                <button class="black-piece-button" id="black-16">
+                    <img class="black-pawn" src="images/bp.png">
+                </button>
+            </div>
+
+            <div class="board-space-black">
+            </div>
+            <div class="board-space-white">
+            </div>
+            <div class="board-space-black">
+            </div>
+            <div class="board-space-white">
+            </div>
+            <div class="board-space-black">
+            </div>
+            <div class="board-space-white">
+            </div>
+            <div class="board-space-black">
+            </div>
+            <div class="board-space-white">
+            </div>
+
+
+            <div class="board-space-white">
+            </div>
+            <div class="board-space-black">
+            </div>
+            <div class="board-space-white">
+            </div>
+            <div class="board-space-black">
+            </div>
+            <div class="board-space-white">
+            </div>
+            <div class="board-space-black">
+            </div>
+            <div class="board-space-white">
+            </div>
+            <div class="board-space-black">
+            </div>
+
+            <div class="board-space-black">
+            </div>
+            <div class="board-space-white">
+            </div>
+            <div class="board-space-black">
+            </div>
+            <div class="board-space-white">
+            </div>
+            <div class="board-space-black">
+            </div>
+            <div class="board-space-white">
+            </div>
+            <div class="board-space-black">
+            </div>
+            <div class="board-space-white">
+            </div>
+
+
+            <div class="board-space-white">
+            </div>
+            <div class="board-space-black">
+            </div>
+            <div class="board-space-white">
+            </div>
+            <div class="board-space-black">
+            </div>
+            <div class="board-space-white">
+            </div>
+            <div class="board-space-black">
+            </div>
+            <div class="board-space-white">
+            </div>
+            <div class="board-space-black">
+            </div>
+
+            <div class="board-space-black">
+                <button class="black-piece-button" id="white-1">
+                    <img class="white-pawn" src="images/wp.png">
+                </button>
+            </div>
+            <div class="board-space-white">
+                <button class="black-piece-button" id="white-2">
+                    <img class="white-pawn" src="images/wp.png">
+                </button>
+            </div>
+            <div class="board-space-black">
+                <button class="black-piece-button" id="white-3">
+                    <img class="white-pawn" src="images/wp.png">
+                </button>
+            </div>
+            <div class="board-space-white">
+                <button class="black-piece-button" id="white-4">
+                    <img class="white-pawn" src="images/wp.png">
+                </button>
+            </div>
+            <div class="board-space-black">
+                <button class="black-piece-button" id="white-5">
+                    <img class="white-pawn" src="images/wp.png">
+                </button>
+            </div>
+            <div class="board-space-white">
+                <button class="black-piece-button" id="white-6">
+                    <img class="white-pawn" src="images/wp.png">
+                </button>
+            </div>
+            <div class="board-space-black">
+                <button class="black-piece-button" id="white-7">
+                    <img class="white-pawn" src="images/wp.png">
+                </button>
+            </div>
+            <div class="board-space-white">
+                <button class="black-piece-button" id="white-8">
+                    <img class="white-pawn" src="images/wp.png">
+                </button>
+            </div>
+
+
+            <div class="board-space-white">
+                <button class="black-piece-button" id="white-9">
+                    <img class="white-rook" src="images/wr.png">
+                </button>
+            </div>
+            <div class="board-space-black">
+                <button class="black-piece-button" id="white-10">
+                    <img class="white-knight" src="images/wn.png">
+                </button>
+            </div>
+            <div class="board-space-white">
+                <button class="black-piece-button" id="white-11">
+                    <img class="white-bishop" src="images/wb.png">
+                </button>
+            </div>
+            <div class="board-space-black">
+                <button class="black-piece-button" id="white-12">
+                    <img class="white-queen" src="images/wq.png">
+                </button>
+            </div>
+            <div class="board-space-white">
+                <button class="black-piece-button" id="white-13">
+                    <img class="white-king" src="images/wk.png">
+                </button>
+            </div>
+            <div class="board-space-black">
+                <button class="black-piece-button" id="white-14">
+                    <img class="white-bishop" src="images/wb.png">
+                </button>
+            </div>
+            <div class="board-space-white">
+                <button class="black-piece-button" id="white-15">
+                    <img class="white-knight" src="images/wn.png">
+                </button>
+            </div>
+            <div class="board-space-black">
+                <button class="black-piece-button" id="white-16">
+                    <img class="white-rook" src="images/wr.png">
+                </button>
+            </div>
+            <button class="black-piece-button" id="white-16">
+                <img class="white-rook" src="images/wr.png">
+            </button>
+            <button class="black-piece-button" id="white-16">
+                <img class="white-rook" src="images/wr.png">
+            </button>
+            <button class="black-piece-button" id="white-16">
+                <img class="white-rook" src="images/wr.png">
+            </button>
+            <button class="black-piece-button" id="white-16">
+                <img class="white-rook" src="images/wn.png">
+            </button>
+            <button class="black-piece-button" id="white-16">
+                <img class="white-rook" src="images/wn.png">
+            </button>
+            <button class="black-piece-button" id="white-16">
+                <img class="white-rook" src="images/wn.png">
+            </button>
+            <button class="black-piece-button" id="white-16">
+                <img class="white-rook" src="images/wb.png">
+            </button>
+            <button class="black-piece-button" id="white-16">
+                <img class="white-rook" src="images/wb.png">
+            </button>
+            <button class="black-piece-button" id="white-16">
+                <img class="white-rook" src="images/wb.png">
+            </button>
+            <button class="black-piece-button" id="white-16">
+                <img class="white-rook" src="images/wq.png">
+            </button>
+            <button class="black-piece-button" id="white-16">
+                <img class="white-rook" src="images/wq.png">
+            </button>
+            <button class="black-piece-button" id="white-16">
+                <img class="white-rook" src="images/wq.png">
+            </button>   
+            <button class="black-piece-button" id="white-16">
+                <img class="white-rook" src="images/br.png">
+            </button>
+            <button class="black-piece-button" id="white-16">
+                <img class="white-rook" src="images/br.png">
+            </button>
+            <button class="black-piece-button" id="white-16">
+                <img class="white-rook" src="images/br.png">
+            </button>
+            <button class="black-piece-button" id="white-16">
+                <img class="white-rook" src="images/bn.png">
+            </button>
+            <button class="black-piece-button" id="white-16">
+                <img class="white-rook" src="images/bn.png">
+            </button>
+            <button class="black-piece-button" id="white-16">
+                <img class="white-rook" src="images/bn.png">
+            </button>
+            <button class="black-piece-button" id="white-16">
+                <img class="white-rook" src="images/bb.png">
+            </button>
+            <button class="black-piece-button" id="white-16">
+                <img class="white-rook" src="images/bb.png">
+            </button>
+            <button class="black-piece-button" id="white-16">
+                <img class="white-rook" src="images/bb.png">
+            </button>
+            <button class="black-piece-button" id="white-16">
+                <img class="white-rook" src="images/bq.png">
+            </button>
+            <button class="black-piece-button" id="white-16">
+                <img class="white-rook" src="images/bq.png">
+            </button>
+            <button class="black-piece-button" id="white-16">
+                <img class="white-rook" src="images/bq.png">
+            </button>
+        </div>
+    </body> 
+</html>

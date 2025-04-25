@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="quadratic.css">
+        <title>Quadratic Calculator</title>
+    </head>
+    <body class="body">
+        <div class="description">
+            In a quadratic trinomial, you can solve it with the coefficients A, B, and C which in are in the format of Ax^2+Bx+C. Enter these coefficients below and click calculate.
+        </div>
+        <div class="inputGrid">
+            <input type="text" class="input" id="aInput" placeholder="Enter A Here.">
+            <input type="text" class="input" id="bInput" placeholder="Enter B Here.">
+            <input type="text" class="input" id="cInput" placeholder="Enter C Here.">
+        </div>
+        <div class="output" id="outBox">
+            Output Goes Here
+        </div>
+        <button class="calcButton" onclick="calculate()">Calculate!</button>
+        <script src="quadratic.js"></script>
+    </body>
+</html>

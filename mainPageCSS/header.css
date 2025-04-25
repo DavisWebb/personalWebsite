@@ -1,0 +1,32 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 55px;
+    padding: 0;
+    margin: 0;
+    background-color: rgb(30, 184, 30);
+    border-bottom-width: 1px;
+    border-bottom-color: black;
+    border-bottom-style: solid;
+    z-index: 100;
+    position: fixed;
+}
+
+.headElements {
+    color: black;
+    text-decoration: none;
+    padding-top: 15px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding-right: 25px;
+    padding-left: 25px;
+    border-right-color: black;
+    border-right-width: 2px;
+    border-right-style: solid;
+    z-index: 200;
+}

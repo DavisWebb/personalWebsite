@@ -1,0 +1,74 @@
+.body {
+    background-color: rgba(40, 87, 40, 0.718);
+    margin: 0;
+    padding: 0;
+}
+
+.centerArea {
+    position: absolute;
+    display: flex;
+    left: 10%;
+    right: 5%;
+    top: 25%;
+    height: 80%;
+    width: 70%;
+}
+
+.homeImage {
+    position: relative;
+    height: 65%;
+    left: 5%;
+}
+
+.description-head {
+    font-weight: bold;
+    font-size: 200%;
+    position: relative;
+    display: inline-block;
+    white-space: nowrap;
+    top: 7.5%;
+    left: 15%;
+}
+
+.description {
+    position: relative;
+    display: inline-block;
+    top: 17.5%;
+    left: 0%;
+    font-size: 125%;
+    line-height: 150%;
+}
+
+@media screen and (max-width: 750px) {
+    .description {
+        position: absolute;
+        left: 2%;
+        top: 15%;
+        width: 200px;
+        font-size: 100%;
+    }
+
+    .description-head {
+        position: absolute;
+        left: 2%;
+        bottom: 90%;
+        font-size: 150%;
+    }
+
+    .homeImage {
+        position: absolute;
+        left: 65%;
+        height: 40%;
+        top: 20%;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .description-head {
+        position: absolute;
+        left: 2%;
+        top: 5%;
+        font-size: 150%;
+    }
+
+}

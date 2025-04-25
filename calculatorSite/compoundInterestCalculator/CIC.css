@@ -1,0 +1,53 @@
+.body {
+    background-color: rgba(152, 203, 220, 0.751);
+    padding-left: 25%;
+    padding-right: 25%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.description {
+    padding-bottom: 2.5%;
+    font-size: 150%;
+}
+
+.inputGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.inputOne, .inputTwo, .inputThree, .inputFour {
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.output {
+    text-align: center;
+    padding-bottom: 15%;
+    padding-top: 5%;
+}
+
+.calcButton {
+    background-color: rgba(0, 255, 0, 0.723);
+    cursor: pointer;
+    opacity: 1;
+    transition: 0.15s;
+    border-style: solid;
+    border-width: 1px;
+    height: 150%;
+}
+
+.calcButton:hover {
+    opacity: .85;
+}
+
+.calcButton:active {
+    transform: translateY(4px);
+}
+
+.bottomContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+}

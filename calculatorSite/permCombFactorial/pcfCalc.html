@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="pcfCalc.css">
+        <title>Permutation, Combination, and Factorial Calculator</title>
+    </head>
+    <body class="body">
+        <div class="description">
+            Use the dropdown to select between permutation, combination, and factorial then enter the group size (n) and number of selected items (r) for permutation/combination or fill in only the factorial input to get x!
+        </div>
+        <div class="inputGrid">
+            <select class="dropdown" id="dropdown" onchange="hideRedundant()">
+                <option value="" disabled selected hidden>Select A Calculation: </option>
+                <option value="0">Permutation</option>
+                <option value="1">Combination</option>
+                <option value="2">Factorial</option>
+            </select>
+            <input class="input" id="nInput" placeholder="enter the size of the group (n)">
+            <input class="input" id="rInput" placeholder="enter the num selected (r)">
+            <input class="input" id="xInput" placeholder="enter number you want factorial of (x)">
+        </div>
+        <div class="bottomContainer">
+            <div class="outBox" id="outBox">
+                Output Appears Here
+            </div>
+            <button class="calcButton" id="calcButton" onclick="calculate()">
+                Calculate
+            </button>
+        </div>
+        <script src="pcfCalc.js"></script>
+    </body>
+</html>

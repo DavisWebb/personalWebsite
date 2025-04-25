@@ -1,0 +1,53 @@
+.body {
+    padding-left: 25%;
+    padding-right: 25%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    background-color: rgba(154, 15, 154, 0.548);
+}
+
+.description {
+    font-size: 150%;
+    margin-bottom: 3%;
+}
+
+.inputGrid {
+    display:grid;
+    grid-template-columns: 1fr;
+}
+
+.input {
+    margin-bottom: 5%;
+    height: 75%;
+}
+
+.calcButton {
+    width: 100%;
+    height: 40px;
+    background-color: rgba(71, 198, 226, 0.484);
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+    opacity: 1;
+    transition: .15s;
+}
+
+.calcButton:hover {
+    opacity: .85;
+    background-color: rgba(157, 209, 221, 0.484);;
+}
+
+.calcButton:active {
+    transform: translateY(4px);
+}
+
+.output {
+    position: absolute;
+    text-align: center;
+    height: 25%;
+    margin-top: 5%;
+    padding-top: 5%;
+    background-color: rgba(71, 198, 226, 0.484);
+    left: 25%;
+    right: 25%;
+}
